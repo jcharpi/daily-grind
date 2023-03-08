@@ -1,5 +1,7 @@
 import { Container, Row } from "react-bootstrap";
 import ExerciseCard from "./ExerciseCard"
+import Images from '../images/imageArray'
+
 export default function SelectPage() {
     
     let exercises: string[] = ["Walk", "Jog", "Run", "Bike"]
@@ -10,7 +12,7 @@ export default function SelectPage() {
             <Container fluid className="select--container">
                 <Row>
                     {exercises.map(exercise => 
-                        <ExerciseCard key={exercise} exercise={exercise}/>
+                        <ExerciseCard key={exercise} image={Images[(exercises.indexOf(exercise))]} exercise={exercise}/>
                     )}
                 </Row>
             </Container>   

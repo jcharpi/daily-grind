@@ -5,6 +5,7 @@ import { InputGroup } from "react-bootstrap";
 
 interface Props {
     exercise: string;
+    image: string;
 }
 
 const ExerciseCard = (props: Props) => {
@@ -24,11 +25,11 @@ const ExerciseCard = (props: Props) => {
     
 
 
-    return <Col className="select--col" xs={12} sm={12} md={6} lg={6} xl={4}>
+    return <Col className="select--col" xs={12} sm={12} md={6} lg={6} xl={3}>
         <ReactCardFlip infinite={true} isFlipped={isFlipped} flipDirection="horizontal">
             <Card onClick={handleClick} className="select--card stretched-link">
                 <Card.Title className="select--card--title">{props.exercise}</Card.Title>
-                <Card.Img variant="bottom" className="select--image" alt="Exercise" src="https://www.nhm.ac.uk/content/dam/nhmwww/discover/frog-eyes-evolution/frog-eyes-chubby-frog-flower-full-width.jpg"/>
+                <Card.Img variant="bottom" className="select--image" alt="Exercise" src={props.image}/>
             </Card>
 
             <Card onClick={handleClick} className="select--card">

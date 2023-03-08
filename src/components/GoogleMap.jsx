@@ -6,10 +6,17 @@ const containerStyle = {
   height: '95vh'
 };
 
-const center = {
-  lat: 43.07187621109797,
-  lng: -89.40345392394327
-};
+let currentLocation
+
+if ("geolocation" in navigator) {
+  navigator.geolocation.getCurrentPosition(function(position) {
+    const lat = position.coords.latitude;
+    const lng = position.coords.longitude;
+    currentLocation = {lat, lng};
+  });
+} else {
+  console.log("Geolocation is not supported.");
+}
 
 function Map(props) {
 
@@ -19,7 +26,7 @@ function Map(props) {
     >
       <GoogleMap
         mapContainerStyle={containerStyle}
-        center={center}
+        center={currentLocation}
         zoom={17}
         >
         { /* Child components, such as markers, info windows, etc. */ }
@@ -32,13 +39,17 @@ function Map(props) {
       : 
       props.nearbyPlaces.map((place) => (<InfoWindowF className="info-window-container" key={place.name} position={place.geometry.location}>
             <>
-              <h6>{place.name}</h6>
-              <p>{`Rating: ${place.rating}/5 ⭐️`}</p>
+              <h6>{place.name}</h6> 
               
-              {place.price_level > 0 ? 
+              {(place.rating > 1 && place.rating < 6) ? 
+                <p>{`Rating: ${place.rating}/5 ⭐️`}</p> : <p>Rating: None</p>
+              }
+
+              {place.price_level > 0 && place.price_level < 6 ? 
                 <p>
                   {`Price Level: ${Array.from({ length: place.price_level }).map(() => `$`).join('')}`}
-                </p> : 
+                </p> 
+                : 
                 <p>
                   {`Price Level: ???`}
                 </p>

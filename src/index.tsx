@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import SelectPage from './components/SelectPage';
-import MapPage from './components/MapPage';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
@@ -13,7 +12,6 @@ root.render(
   <React.StrictMode>
     <div>
       <SelectPage />
-      <MapPage/>
     </div>
     
   </React.StrictMode>
