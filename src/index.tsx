@@ -4,6 +4,7 @@ import SelectPage from './components/SelectPage';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
+import MapPage from './components/MapPage';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
