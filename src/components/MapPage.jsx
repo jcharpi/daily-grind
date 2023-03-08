@@ -21,8 +21,7 @@ export default function MapPage () {
             }
             
             const data = await response.json();
-            setNearbyPlaces(data.results);
-            console.log(currentCoords)
+            setNearbyPlaces(data.results.slice(0,3));
           } catch (error) {
             console.error(error);
           }

@@ -1,10 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import SelectPage from './components/SelectPage';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import MapPage from './components/MapPage';
+import ExerciseApp from './structural/ExerciseApp';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -12,7 +11,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <div>
-      <SelectPage />
+      <ExerciseApp />
     </div>
     
   </React.StrictMode>

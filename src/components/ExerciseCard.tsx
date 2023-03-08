@@ -2,6 +2,7 @@ import { Card, Col, Form, Button } from "react-bootstrap";
 import ReactCardFlip from "react-card-flip";
 import { useState } from "react";
 import { InputGroup } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 interface Props {
     exercise: string;
@@ -11,10 +12,11 @@ interface Props {
 const ExerciseCard = (props: Props) => {
 
     const [isFlipped, setIsFlipped] = useState(false)
+    const navigate = useNavigate();
 
-    function handleClick(event: React.MouseEvent<HTMLDivElement>) {
+    function handleFlip(event: React.MouseEvent<HTMLDivElement>) {
         if (event.target instanceof HTMLDivElement) {
-            setIsFlipped(prev => !prev);
+            setIsFlipped(prev => !prev)
         }
     }
 
@@ -23,16 +25,18 @@ const ExerciseCard = (props: Props) => {
         // Do nothing
     }
     
-
+    function handleMinutes() {
+        navigate('/map')
+    }
 
     return <Col className="select--col" xs={12} sm={12} md={6} lg={6} xl={4}>
         <ReactCardFlip infinite={true} isFlipped={isFlipped} flipDirection="horizontal">
-            <Card onClick={handleClick} className="select--card stretched-link">
+            <Card onClick={handleFlip} className="select--card stretched-link">
                 <Card.Title className="select--card--title">{props.exercise}</Card.Title>
                 <Card.Img variant="bottom" className="select--image" alt="Exercise" src={props.image}/>
             </Card>
 
-            <Card onClick={handleClick} className="select--card">
+            <Card onClick={handleFlip} className="select--card">
                 <Card.Body>
                     <Form>
                         <Form.Group>
@@ -45,7 +49,7 @@ const ExerciseCard = (props: Props) => {
                     </Form>
                 </Card.Body>
                 <div className="center--align">
-                    <Button className="card--length--button">Submit</Button>
+                    <Button onClick={handleMinutes} className="card--length--button">Submit</Button>
                 </div>
             </Card>
         </ReactCardFlip>
