@@ -1,8 +1,8 @@
 import React from "react"
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import MapPage from "../components/MapPage";
-import SelectPage from "../components/SelectPage";
+import MapPage from "../pages/MapPage";
+import SelectPage from "../pages/SelectPage";
 
 export default function ExerciseApp() {
     return (

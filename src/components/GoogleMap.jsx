@@ -6,18 +6,6 @@ const containerStyle = {
   height: '95vh'
 };
 
-let currentLocation
-
-if ("geolocation" in navigator) {
-  navigator.geolocation.getCurrentPosition(function(position) {
-    const lat = position.coords.latitude;
-    const lng = position.coords.longitude;
-    currentLocation = {lat, lng};
-  });
-} else {
-  console.log("Geolocation is not supported.");
-}
-
 function Map(props) {
 
   return (
@@ -26,12 +14,12 @@ function Map(props) {
     >
       <GoogleMap
         mapContainerStyle={containerStyle}
-        center={currentLocation}
+        center={props.currentLocation}
         zoom={16}
         >
         { /* Child components, such as markers, info windows, etc. */ }
         
-      <MarkerF position={currentLocation}/>
+      <MarkerF position={props.currentLocation}/>
       
       {props.nearbyPlaces == null 
       ? 

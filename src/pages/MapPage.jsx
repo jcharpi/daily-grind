@@ -1,9 +1,11 @@
 import { Card } from "react-bootstrap";
-import GoogleMap from "./GoogleMap";
-import { useState, useEffect } from "react";
+import GoogleMap from "../components/GoogleMap";
+import { useState, useEffect, useRef } from "react";
 export default function MapPage () {
 
     const [nearbyPlaces, setNearbyPlaces] = useState(null);
+    
+    const currentCoords = useRef()
 
     useEffect(() => {
         const fetchData = async () => {
@@ -11,10 +13,11 @@ export default function MapPage () {
             const position = await new Promise((resolve, reject) => {
               navigator.geolocation.getCurrentPosition(resolve, reject);
             });
-      
-            const currentCoords = `${position.coords.latitude},${position.coords.longitude}`
+            const lat = position.coords.latitude
+            const lng = position.coords.longitude
+            currentCoords.current = {lat, lng}
             
-            const response = await fetch(`http://localhost:3000/location?location=${currentCoords}`);
+            const response = await fetch(`http://localhost:3000/location?location=${lat},${lng}`);
             
             if (!response.ok) {
               throw new Error('Failed to fetch data');
@@ -41,11 +44,11 @@ export default function MapPage () {
                             </Card.Text>
 
                             <Card.Text>
-                                Start Location: 
+                                Start: Current Location
                             </Card.Text>
 
                             <Card.Text>
-                                End Location: Memorial Union
+                                End: Memorial Union
                             </Card.Text>
 
                             <Card.Text>
@@ -53,7 +56,7 @@ export default function MapPage () {
                             </Card.Text>
                         </Card.Body>
                 </Card>
-                <GoogleMap nearbyPlaces={nearbyPlaces} />
+                <GoogleMap currentLocation={currentCoords.current} nearbyPlaces={nearbyPlaces} />
             </div>           
         </>
     )

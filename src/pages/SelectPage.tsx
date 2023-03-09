@@ -1,5 +1,5 @@
 import { Container, Row } from "react-bootstrap";
-import ExerciseCard from "./ExerciseCard"
+import ExerciseCard from "../components/ExerciseCard"
 import Images from '../images/imageArray'
 
 export default function SelectPage() {
