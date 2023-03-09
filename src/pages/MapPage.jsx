@@ -1,6 +1,8 @@
 import { Card } from "react-bootstrap";
 import GoogleMap from "../components/GoogleMap";
 import { useState, useEffect, useRef } from "react";
+
+
 export default function MapPage () {
 
     const [nearbyPlaces, setNearbyPlaces] = useState(null);

@@ -49,7 +49,7 @@ const ExerciseCard = (props: Props) => {
                     </Form>
                 </Card.Body>
                 <div className="center--align">
-                    <Button onClick={handleMinutes} className="card--length--button">Submit</Button>
+                    <Button size="lg" onClick={handleMinutes} className="card--length--button">Submit</Button>
                 </div>
             </Card>
         </ReactCardFlip>

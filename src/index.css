@@ -75,17 +75,9 @@ input {
   border-left: 2px;
 }
 
-.card--length--button {
-  width: 8rem;
-  height: 3rem;
-  font-size: large;
-}
-
 .center--align {
   margin: auto 0;
 }
-
-
 
 
 /* MAP PAGE */
@@ -102,4 +94,18 @@ input {
 .center--map {
   display: flex;
   justify-content: center;
+}
+
+
+/* HOME PAGE */
+h1 {
+  color: white;
+  font-size: 5rem;
+  margin-top: 30vh;
+}
+
+.home--new--button {
+  background-color: white;
+  color: purple;
+  margin-top: 10vh;
 }
