@@ -2,6 +2,10 @@
   font-family: 'IBM Plex Sans', sans-serif;
 }
 
+*:focus {
+  outline: none;
+}
+
 body {
   background-color: purple;
   padding: 1rem;
@@ -111,4 +115,12 @@ h1 {
   width: 15rem;
   height: 3.5rem;
   font-size: 1.5rem;
+}
+
+.home--new--button:hover, .home--new--button:active, .home--new--button:focus {
+  background-color: purple !important;
+  color:white !important;
+  border-style: solid;
+  border-color: white !important;
+  border-width: 2px;
 }
