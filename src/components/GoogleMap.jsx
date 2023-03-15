@@ -26,7 +26,7 @@ function Map(props) {
       <h6>Loading...</h6> 
       : 
       props.nearbyPlaces.map((place) => (
-            <InfoWindowF className="info-window-container" key={place.vicinity} position={place.geometry.location}>
+            <InfoWindowF className="info--window--container" key={place.vicinity} position={place.geometry.location}>
               <>
                 <h6>{place.name}</h6> 
                 
