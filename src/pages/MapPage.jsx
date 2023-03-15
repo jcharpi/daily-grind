@@ -45,7 +45,8 @@ export default function MapPage () {
             }
             
             const data = await response.json();
-            setNearbyPlaces(data.results.slice(0,3));
+            
+            setNearbyPlaces(data.results.sort(() => Math.random() - 0.5).slice(0, 5));
           } catch (error) {
             console.error(error);
           }
