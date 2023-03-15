@@ -3,10 +3,9 @@ import GoogleMap from "../components/GoogleMap";
 import { useState, useEffect, useRef } from "react";
 
 
-export default function MapPage () {
 
+export default function MapPage () {
     const [nearbyPlaces, setNearbyPlaces] = useState(null);
-    
     const currentCoords = useRef()
 
     useEffect(() => {
@@ -42,7 +41,7 @@ export default function MapPage () {
                     <Card.Header className="map--card--header">Your Trip</Card.Header>
                         <Card.Body>
                             <Card.Text>
-                                Type: Run
+                                Type: {localStorage.getItem("type")}
                             </Card.Text>
 
                             <Card.Text>

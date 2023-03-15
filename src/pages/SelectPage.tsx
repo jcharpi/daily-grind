@@ -1,11 +1,10 @@
 import { Container, Row } from "react-bootstrap";
 import ExerciseCard from "../components/ExerciseCard"
 import Images from '../images/imageArray'
-
 export default function SelectPage() {
     
-    let exercises: string[] = ["Walk", "Jog", "Run", "Bike"]
-
+    const exercises: string[] = ["Walk", "Jog", "Run", "Bike"]
+    
     return (
         <>
             <h2 className="select--title">Select Exercise</h2>

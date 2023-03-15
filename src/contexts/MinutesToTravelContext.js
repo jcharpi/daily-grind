@@ -1,5 +1,5 @@
 import { createContext } from "react";
 
-const Minutes = createContext();
+const MinutesToTravelContext = createContext()
 
-export default Minutes
+export default MinutesToTravelContext

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { InputGroup } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
+
 interface Props {
     exercise: string;
     image: string;
@@ -14,6 +15,7 @@ const ExerciseCard = (props: Props) => {
     const [isFlipped, setIsFlipped] = useState(false)
     const navigate = useNavigate();
 
+    
     function handleFlip(event: React.MouseEvent<HTMLDivElement>) {
         if (event.target instanceof HTMLDivElement) {
             setIsFlipped(prev => !prev)
@@ -26,7 +28,9 @@ const ExerciseCard = (props: Props) => {
     }
     
     function handleMinutes() {
+        localStorage.setItem("type", props.exercise)
         navigate('/map')
+        window.location.reload();
     }
 
     return <Col className="select--col" xs={12} sm={12} md={6} lg={4} xl={3}>
