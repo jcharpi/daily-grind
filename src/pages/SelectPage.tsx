@@ -3,11 +3,11 @@ import ExerciseCard from "../components/ExerciseCard"
 import Images from '../images/imageArray'
 export default function SelectPage() {
     
-    const exercises: string[] = ["Walk", "Jog", "Run", "Bike"]
+    const exercises: string[] = ["Walk", "Run", "Bike"]
     
     return (
         <>
-            <h2 className="select--title">Select Exercise</h2>
+            <h1 className="select--title">Select Exercise</h1>
             <Container fluid className="select--container">
                 <Row>
                     {exercises.map(exercise => 

@@ -11,13 +11,21 @@ body {
   padding: 1rem;
 }
 
+h1 {
+  color: white;
+  font-size: 5rem;
+  margin-top: 25vh;
+}
+
+
 
 /* SELECT PAGE */
 .select--title {
   text-align: center;
   font-weight: 500;
-  font-size: 4rem;
   color: white;
+  margin-top: 0;
+  margin-bottom: 2rem;
 }
 
 .select--col {
@@ -30,7 +38,6 @@ body {
 .select--card {
   width: auto;
   height: 23rem;
-  min-width: 270px;
   margin: 1rem;
   padding: 3rem;
 }
@@ -91,6 +98,8 @@ input {
 }
 
 
+
+
 /* MAP PAGE */
 .map--card--header {
   font-size: 2rem;
@@ -108,12 +117,6 @@ input {
 }
 
 /* HOME PAGE */
-h1 {
-  color: white;
-  font-size: 5rem;
-  margin-top: 30vh;
-}
-
 .home--new--button {
   background-color: white;
   color: purple;

@@ -7,10 +7,19 @@ export default function MapPage () {
     
     const minToMeter = (min) => {
       const AVG_WALK_METERS_PER_MIN = 1.4 * 60
+      const AVG_RUN_METERS_PER_MIN = 2.9 * 60
+      const AVG_BIKE_METERS_PER_MIN = 4.4 * 60
+
       let range = 0
       switch(localStorage.getItem("type")) {
         case "Walk":
           range = AVG_WALK_METERS_PER_MIN * min
+          return range
+        case "Run":
+          range = AVG_RUN_METERS_PER_MIN * min
+          return range
+        case "Bike":
+          range = AVG_BIKE_METERS_PER_MIN * min
           return range
         default:
           return 0
