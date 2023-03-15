@@ -12,7 +12,7 @@ export default function HomePage() {
     return (
         <div className="text-center">
             <h1>Welcome Back, User</h1>
-            <Button onClick={handleMinutes} className="home--new--button">New Trip</Button>
+            <Button onClick={handleMinutes} className="home--new--button shadow-none">New Trip</Button>
         </div>
     )
 }

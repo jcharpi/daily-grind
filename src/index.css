@@ -2,9 +2,7 @@
   font-family: 'IBM Plex Sans', sans-serif;
 }
 
-*:focus {
-  outline: none;
-}
+
 
 body {
   background-color: purple;
@@ -30,7 +28,7 @@ body {
 .select--card {
   width: auto;
   height: 23rem;
-  min-width: 330px;
+  min-width: 270px;
   margin: 1rem;
   padding: 3rem;
 }
@@ -55,6 +53,10 @@ body {
   font-size: 3rem;
 }
 
+.card--length--button {
+  width: 10rem;
+}
+
 .card--length--title {
   font-size: 2rem;
   margin-bottom: 1rem;
@@ -62,6 +64,9 @@ body {
 
 .card--length--input {
   display: flex;
+  margin: auto;
+  min-width: 75px;
+  max-width: 20rem;
   border-top-right-radius: 0px;
   border-bottom-right-radius: 0px;
 }
@@ -115,6 +120,7 @@ h1 {
   width: 15rem;
   height: 3.5rem;
   font-size: 1.5rem;
+  border-color: white;
 }
 
 .home--new--button:hover, .home--new--button:active, .home--new--button:focus {

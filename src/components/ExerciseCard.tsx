@@ -29,7 +29,7 @@ const ExerciseCard = (props: Props) => {
         navigate('/map')
     }
 
-    return <Col className="select--col" xs={12} sm={12} md={6} lg={6} xl={4}>
+    return <Col className="select--col" xs={12} sm={12} md={6} lg={4} xl={3}>
         <ReactCardFlip infinite={true} isFlipped={isFlipped} flipDirection="horizontal">
             <Card onClick={handleFlip} className="select--card stretched-link">
                 <Card.Title className="select--card--title">{props.exercise}</Card.Title>
@@ -42,7 +42,7 @@ const ExerciseCard = (props: Props) => {
                         <Form.Group>
                             <Form.Label className="card--length--title">Workout Length</Form.Label>
                             <div className="card--length--input">
-                                <Form.Control className="card--length--input no--highlight" onClick={nothing} type="text" placeholder="Enter length" />
+                                <Form.Control className="card--length--input no--highlight" onClick={nothing} type="text" placeholder="Length" />
                                 <InputGroup.Text className="card--length--unit">minutes</InputGroup.Text>
                             </div>
                         </Form.Group>
