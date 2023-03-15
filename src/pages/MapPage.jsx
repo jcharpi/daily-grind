@@ -1,4 +1,3 @@
-import { Card } from "react-bootstrap";
 import GoogleMap from "../components/GoogleMap";
 import { useState, useEffect, useRef } from "react";
 export default function MapPage () {
@@ -28,7 +27,6 @@ export default function MapPage () {
 
 
     useEffect(() => {
-        console.log(minToMeter(localStorage.getItem("minutes")))
         const fetchData = async () => {
           try {
             const position = await new Promise((resolve, reject) => {
@@ -45,8 +43,8 @@ export default function MapPage () {
             }
             
             const data = await response.json();
+            data.results.length === 0 ? alert("No places close enough to specified travel time") : setNearbyPlaces(data.results.sort(() => Math.random() - 0.5).slice(0, 5))
             
-            setNearbyPlaces(data.results.sort(() => Math.random() - 0.5).slice(0, 5));
           } catch (error) {
             console.error(error);
           }
@@ -57,29 +55,36 @@ export default function MapPage () {
 
     return (
         <>
-            <div className="center--map">
-                <Card className="map--card">
-                    <Card.Header className="map--card--header">Your Trip</Card.Header>
-                        <Card.Body>
-                            <Card.Text>
-                                Type: {localStorage.getItem("type")}
-                            </Card.Text>
+          <div className="center--map">
+            {/* <div className="map--cards">
+              <Card className="map--card">
+                  <Card.Header className="map--card--header">Your Trip Summary</Card.Header>
+                  <Card.Body>
+                      <Card.Text>
+                          Type: {localStorage.getItem("type")}
+                      </Card.Text>
+                      <Card.Text>
+                          Start: Current Location
+                      </Card.Text>
+                      <Card.Text>
+                          Current Weather: Sunny ☀️
+                      </Card.Text>
+                  </Card.Body>
+              </Card>
 
-                            <Card.Text>
-                                Start: Current Location
-                            </Card.Text>
+              {nearbyPlaces !== null && nearbyPlaces.map(place => {
+                return (
+                  <Card className="map--card" key={`${place.place_id}--card`}>
+                    <Card.Body>
+                      <Card.Title>{place.name}</Card.Title>
+                    </Card.Body>
+                  </Card>
+                ) 
+              })}
+            </div> */}
 
-                            <Card.Text>
-                                End: Memorial Union
-                            </Card.Text>
-
-                            <Card.Text>
-                                Current Weather: Sunny ☀️
-                            </Card.Text>
-                        </Card.Body>
-                </Card>
-                <GoogleMap currentLocation={currentCoords.current} nearbyPlaces={nearbyPlaces} />
-            </div>           
+            <GoogleMap currentLocation={currentCoords.current} nearbyPlaces={nearbyPlaces} />
+          </div>           
         </>
     )
 }

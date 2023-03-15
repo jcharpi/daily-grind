@@ -2,13 +2,19 @@
   font-family: 'IBM Plex Sans', sans-serif;
 }
 
-*:focus {
+*:focus, *:hover {
   outline: none !important;
 }
 
 body {
-  background-color: purple;
+  background-color: #523A28;
   padding: 1rem;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
 h1 {
@@ -24,7 +30,7 @@ h1 {
   text-align: center;
   font-weight: 500;
   color: white;
-  margin-top: 0;
+  margin-top: 4rem;
   margin-bottom: 2rem;
 }
 
@@ -33,7 +39,6 @@ h1 {
   color: black;
   margin: auto;
 }
-
 
 .select--card {
   width: auto;
@@ -63,7 +68,14 @@ h1 {
 }
 
 .card--length--button {
+  background-color: #523A28;
+  border: none;
   width: 10rem;
+}
+
+.card--length--button:hover, .card--length--button:focus, .card--length--button:active {
+  background-color: #342519 !important;
+  border: none !important;
 }
 
 .card--length--title {
@@ -103,6 +115,7 @@ input {
 /* MAP PAGE */
 .map--card--header {
   font-size: 2rem;
+  background-color: white;
 }
 
 .map--card {
@@ -116,10 +129,12 @@ input {
   justify-content: center;
 }
 
+
+
 /* HOME PAGE */
 .home--new--button {
   background-color: white;
-  color: purple;
+  color: #523A28;
   margin-top: 10vh;
   width: 15rem;
   height: 3.5rem;
@@ -128,7 +143,7 @@ input {
 }
 
 .home--new--button:hover, .home--new--button:active, .home--new--button:focus {
-  background-color: purple !important;
+  background-color: #523A28 !important;
   color:white !important;
   border-style: solid;
   border-color: white !important;

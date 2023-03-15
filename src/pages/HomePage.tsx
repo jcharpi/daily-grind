@@ -11,8 +11,8 @@ export default function HomePage() {
 
     return (
         <div className="text-center">
-            <h1>Welcome Back, User</h1>
-            <Button onClick={handleMinutes} className="home--new--button shadow-none">New Trip</Button>
+            <h1>Welcome</h1>
+            <Button onClick={handleMinutes} className="home--new--button shadow-none">Find Coffee ☕</Button>
         </div>
     )
 }

@@ -2,8 +2,8 @@ import React from 'react'
 import { GoogleMap, LoadScript, InfoWindowF, MarkerF } from '@react-google-maps/api';
 
 const containerStyle = {
-  width: '80%',
-  height: '95vh'
+  width: '100%',
+  height: '100vh'
 };
 
 function Map(props) {
@@ -26,7 +26,7 @@ function Map(props) {
       <h6>Loading...</h6> 
       : 
       props.nearbyPlaces.map((place) => (
-            <InfoWindowF className="info--window--container" key={place.vicinity} position={place.geometry.location}>
+            <InfoWindowF className="info--window--container" key={place.place_id} position={place.geometry.location}>
               <>
                 <h6>{place.name}</h6> 
                 
@@ -39,9 +39,7 @@ function Map(props) {
                     {`Price Level: ${Array.from({ length: place.price_level }).map(() => `$`).join('')}`}
                   </p> 
                   : 
-                  <p>
-                    {`Price Level: ???`}
-                  </p>
+                  <></>
                 }
               </>
             </InfoWindowF>

@@ -1,5 +1,5 @@
 import { Container, Row } from "react-bootstrap";
-import ExerciseCard from "../components/ExerciseCard"
+import ExerciseCard from "../components/TravelCard"
 import Images from '../images/imageArray'
 export default function SelectPage() {
     
@@ -7,7 +7,7 @@ export default function SelectPage() {
     
     return (
         <>
-            <h1 className="select--title">Select Exercise</h1>
+            <h1 className="select--title">Select Travel Type</h1>
             <Container fluid className="select--container">
                 <Row>
                     {exercises.map(exercise => 

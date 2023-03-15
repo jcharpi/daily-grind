@@ -10,7 +10,6 @@ interface Props {
 
 const ExerciseCard = (props: Props) => {
     const [minutes, setMinutes] = useState("")
-
     const [isFlipped, setIsFlipped] = useState(false)
     const navigate = useNavigate();
 
@@ -57,7 +56,7 @@ const ExerciseCard = (props: Props) => {
                 <Card.Body>
                     <Form>
                         <Form.Group>
-                            <Form.Label className="card--length--title">Workout Length</Form.Label>
+                            <Form.Label className="card--length--title">Travel Length</Form.Label>
                             <div className="card--length--input">
                                 <Form.Control value={minutes} onChange={e => setMinutes(e.target.value)} className="card--length--input no--highlight" onClick={nothing} type="text" placeholder="Length" />
                                 <InputGroup.Text className="card--length--unit">minutes</InputGroup.Text>

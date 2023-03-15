@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import ExerciseApp from './structural/ExerciseApp';
+import ExerciseApp from './structural/CoffeeApp';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
