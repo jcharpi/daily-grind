@@ -1,14 +1,25 @@
 import { Card } from "react-bootstrap";
 import GoogleMap from "../components/GoogleMap";
 import { useState, useEffect, useRef } from "react";
-
-
-
 export default function MapPage () {
     const [nearbyPlaces, setNearbyPlaces] = useState(null);
     const currentCoords = useRef()
+    
+    const minToMeter = (min) => {
+      const AVG_WALK_METERS_PER_MIN = 1.4 * 60
+      let range = 0
+      switch(localStorage.getItem("type")) {
+        case "Walk":
+          range = AVG_WALK_METERS_PER_MIN * min
+          return range
+        default:
+          return 0
+      }
+    }
+
 
     useEffect(() => {
+        console.log(minToMeter(localStorage.getItem("minutes")))
         const fetchData = async () => {
           try {
             const position = await new Promise((resolve, reject) => {
@@ -18,7 +29,7 @@ export default function MapPage () {
             const lng = position.coords.longitude
             currentCoords.current = {lat, lng}
             
-            const response = await fetch(`http://localhost:3000/location?location=${lat},${lng}`);
+            const response = await fetch(`http://localhost:3000/location?location=${lat},${lng}&radius=${minToMeter(parseInt(localStorage.getItem("minutes")))}`);
             
             if (!response.ok) {
               throw new Error('Failed to fetch data');

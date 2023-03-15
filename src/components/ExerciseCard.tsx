@@ -1,9 +1,7 @@
-import { Card, Col, Form, Button } from "react-bootstrap";
+import { InputGroup, Card, Col, Form, Button } from "react-bootstrap";
 import ReactCardFlip from "react-card-flip";
 import { useState } from "react";
-import { InputGroup } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-
 
 interface Props {
     exercise: string;
@@ -11,6 +9,7 @@ interface Props {
 }
 
 const ExerciseCard = (props: Props) => {
+    const [minutes, setMinutes] = useState("")
 
     const [isFlipped, setIsFlipped] = useState(false)
     const navigate = useNavigate();
@@ -24,15 +23,29 @@ const ExerciseCard = (props: Props) => {
 
     function nothing(event: React.MouseEvent<HTMLInputElement>) {
         event.stopPropagation();
-        // Do nothing
     }
     
     function handleMinutes() {
+        if(minutes !== "" && !verifyMinutes(minutes)) {
+            return
+        } else if(minutes === "") {
+            alert("No length provided")
+            return
+        }
         localStorage.setItem("type", props.exercise)
+        localStorage.setItem("minutes", minutes)
         navigate('/map')
-        window.location.reload();
+        window.location.reload()
     }
 
+    const verifyMinutes = (min: string): boolean => {
+        if(parseInt(min) < 1 || parseInt(min) > 300) {
+            alert("Invalid minute amount")
+            return false
+        }
+        return true
+    }
+    
     return <Col className="select--col" xs={12} sm={12} md={6} lg={4} xl={3}>
         <ReactCardFlip infinite={true} isFlipped={isFlipped} flipDirection="horizontal">
             <Card onClick={handleFlip} className="select--card stretched-link">
@@ -46,7 +59,7 @@ const ExerciseCard = (props: Props) => {
                         <Form.Group>
                             <Form.Label className="card--length--title">Workout Length</Form.Label>
                             <div className="card--length--input">
-                                <Form.Control className="card--length--input no--highlight" onClick={nothing} type="text" placeholder="Length" />
+                                <Form.Control value={minutes} onChange={e => setMinutes(e.target.value)} className="card--length--input no--highlight" onClick={nothing} type="text" placeholder="Length" />
                                 <InputGroup.Text className="card--length--unit">minutes</InputGroup.Text>
                             </div>
                         </Form.Group>
