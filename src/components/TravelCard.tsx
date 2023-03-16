@@ -1,6 +1,6 @@
 import { InputGroup, Card, Col, Form, Button } from "react-bootstrap";
 import ReactCardFlip from "react-card-flip";
-import { useState } from "react";
+import { useState, memo } from "react";
 import { useNavigate } from "react-router-dom";
 
 interface Props {
@@ -8,7 +8,7 @@ interface Props {
     image: string;
 }
 
-const ExerciseCard = (props: Props) => {
+const TravelCard = (props: Props) => {
     const [minutes, setMinutes] = useState("")
     const [isFlipped, setIsFlipped] = useState(false)
     const navigate = useNavigate();
@@ -73,4 +73,4 @@ const ExerciseCard = (props: Props) => {
     </Col>
 }
 
-export default ExerciseCard
+export default memo(TravelCard)
