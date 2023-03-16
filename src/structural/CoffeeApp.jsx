@@ -15,7 +15,7 @@ export default function CoffeeApp() {
     return (
         <BrowserRouter basename="/daily-grind">
             <Routes>
-                <Route index element={<HomePage />} />
+                <Route path="/"  element={<HomePage />} />
                 <Route path="/select" element={<SelectPage/>}></Route>
                 <Route path="/map" element={<MapPage/>}></Route>
                 <Route path="*" element={<p>No Match...</p>} />
