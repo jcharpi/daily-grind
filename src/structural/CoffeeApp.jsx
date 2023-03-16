@@ -13,7 +13,7 @@ export default function CoffeeApp() {
       }, []);
 
     return (
-        <BrowserRouter basename="/select">
+        <BrowserRouter>
             <Routes>
                 <Route index element={<HomePage />} />
                 <Route path="/select" element={<SelectPage/>}></Route>
