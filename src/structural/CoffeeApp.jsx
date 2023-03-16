@@ -13,7 +13,7 @@ export default function CoffeeApp() {
       }, []);
 
     return (
-        <HashRouter basename="daily-grind">
+        <HashRouter>
             <Routes>
                 <Route path="/"  element={<HomePage />} />
                 <Route path="/select" element={<SelectPage/>}></Route>
