@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 import HomePage from "../pages/HomePage";
 import MapPage from "../pages/MapPage";
 import SelectPage from "../pages/SelectPage";
@@ -13,14 +13,13 @@ export default function CoffeeApp() {
       }, []);
 
     return (
-        <BrowserRouter>
+        <HashRouter>
             <Routes>
                 <Route path="/"  element={<HomePage />} />
                 <Route path="/select" element={<SelectPage/>}></Route>
                 <Route path="/map" element={<MapPage/>}></Route>
                 <Route path="*" element={<p>No Match...</p>} />
             </Routes>
-        </BrowserRouter> 
+        </HashRouter> 
     )
 }
-
