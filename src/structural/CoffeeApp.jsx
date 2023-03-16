@@ -4,7 +4,7 @@ import MapPage from "../pages/MapPage";
 import SelectPage from "../pages/SelectPage";
 import { useEffect } from "react";
 
-export default function ExerciseApp() {
+export default function CoffeeApp() {
 
     useEffect(() => {
         if (!localStorage.getItem("minutes")) {
@@ -13,7 +13,7 @@ export default function ExerciseApp() {
       }, []);
 
     return (
-        <BrowserRouter>
+        <BrowserRouter basename="/coffee-app">
             <Routes>
                 <Route index element={<HomePage />} />
                 <Route path="/select" element={<SelectPage/>}></Route>
