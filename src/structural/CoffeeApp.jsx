@@ -18,7 +18,7 @@ export default function CoffeeApp() {
                 <Route path="/"  element={<HomePage />} />
                 <Route path="/select" element={<SelectPage/>}></Route>
                 <Route path="/map" element={<MapPage/>}></Route>
-                <Route path="*" element={<p>No Match...</p>} />
+                <Route path="*" element={<HomePage />} />
             </Routes>
         </BrowserRouter> 
     )
