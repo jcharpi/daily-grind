@@ -38,7 +38,7 @@ export default function MapPage () {
             const lng = position.coords.longitude
             currentCoords.current = {lat, lng}
             
-            const response = await fetch(`http://localhost:3000/location?location=${lat},${lng}&radius=${minToMeter(parseInt(localStorage.getItem("minutes")))}`);
+            const response = await fetch(`https://daily-grind-3ecb4.cloudfunctions.net/app?location=${lat},${lng}&radius=${minToMeter(parseInt(localStorage.getItem("minutes")))}`);
             
             if (!response.ok) {
               throw new Error('Failed to fetch data');
