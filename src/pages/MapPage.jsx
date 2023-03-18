@@ -55,9 +55,6 @@ export default function MapPage () {
             } else {
               setNearbyPlaces(data.results.sort(() => Math.random() - 0.5).slice(0, 5))
             }
-            // data.results.length === 0 ?
-            // navigate("/select") 
-            // :
             
           } catch (error) {
             console.error(error);
