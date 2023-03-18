@@ -46,10 +46,18 @@ export default function MapPage () {
             
             const data = await response.json();
 
-            data.results.length === 0 ?
-            navigate("/select") 
-            :
-            setNearbyPlaces(data.results.sort(() => Math.random() - 0.5).slice(0, 5))
+            if(data.results.length === 0) {
+              setTimeout(() => {
+                alert("No places nearby found.")
+              }, 50);
+              
+              navigate("/select") 
+            } else {
+              setNearbyPlaces(data.results.sort(() => Math.random() - 0.5).slice(0, 5))
+            }
+            // data.results.length === 0 ?
+            // navigate("/select") 
+            // :
             
           } catch (error) {
             console.error(error);
