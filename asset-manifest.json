@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/daily-grind/static/css/main.3eb54cc0.css",
-    "main.js": "/daily-grind/static/js/main.0834bb4f.js",
+    "main.js": "/daily-grind/static/js/main.e29ccc8c.js",
     "static/js/787.2b89d720.chunk.js": "/daily-grind/static/js/787.2b89d720.chunk.js",
     "static/media/bike.svg": "/daily-grind/static/media/bike.3a6df55f1e0063df238b0347d1153e96.svg",
     "index.html": "/daily-grind/index.html",
     "static/media/run.svg": "/daily-grind/static/media/run.37d30534ba302aff5f65f5a77d3b52c0.svg",
     "static/media/walk.svg": "/daily-grind/static/media/walk.8bf0dd102af13d6d206c620f8221ba83.svg",
     "main.3eb54cc0.css.map": "/daily-grind/static/css/main.3eb54cc0.css.map",
-    "main.0834bb4f.js.map": "/daily-grind/static/js/main.0834bb4f.js.map",
+    "main.e29ccc8c.js.map": "/daily-grind/static/js/main.e29ccc8c.js.map",
     "787.2b89d720.chunk.js.map": "/daily-grind/static/js/787.2b89d720.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3eb54cc0.css",
-    "static/js/main.0834bb4f.js"
+    "static/js/main.e29ccc8c.js"
   ]
 }
