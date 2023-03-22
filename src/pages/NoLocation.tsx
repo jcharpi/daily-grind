@@ -6,6 +6,7 @@ export default function NoMatch() {
 
     function handleHome() {
         navigate('/')
+        window.location.reload()
     }
 
     return (
