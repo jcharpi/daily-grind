@@ -28,9 +28,11 @@ h2 {
   font-size: 3rem;
   margin: 0 20rem;
   margin-top: 9rem;
-  
 }
 
+h6 {
+  margin-right: 0.75rem;
+}
 /* SELECT PAGE */
 .select--title {
   text-align: center;
