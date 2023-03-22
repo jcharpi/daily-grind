@@ -57,7 +57,7 @@ export default function MapPage () {
             }
             
           } catch (error) {
-            console.error(error);
+            navigate("/no-location")
           }
         };
       

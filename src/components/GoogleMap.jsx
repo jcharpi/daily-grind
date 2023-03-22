@@ -16,7 +16,11 @@ function Map(props) {
         mapContainerStyle={containerStyle}
         center={props.currentLocation}
         zoom={16}
-        options={{ gestureHandling: 'greedy' }}
+        options={{ 
+          gestureHandling: 'greedy',
+          streetViewControl: false,
+          zoomControl: false
+        }}
       >
 
         <MarkerF position={props.currentLocation}/>

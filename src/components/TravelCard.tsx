@@ -38,7 +38,8 @@ const TravelCard = (props: Props) => {
     }
 
     const verifyMinutes = (min: string): boolean => {
-        if(parseInt(min) < 1 || parseInt(min) > 300) {
+        const numberOnlyPattern = /^\d+$/
+        if(!numberOnlyPattern.test(min) || parseInt(min) < 1 || parseInt(min) > 300) {
             alert("Invalid minute amount")
             return false
         }
